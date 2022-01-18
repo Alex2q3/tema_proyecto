@@ -34,13 +34,7 @@
 
 		<nav class="navbar navbar-custom navbar-fixed-top" role="navigation">
 			<div class="top-area">
-				<div class="container">
-					<div class="row">
-						<div class="col-sm-6 col-md-6">
-							<p class="bold text-right">Soporte las 24H. +593 991 626262</p>
-						</div>
-					</div>
-				</div>
+
 			</div>
 			<div class="container navigation">
 
@@ -57,19 +51,19 @@
 				<!-- Collect the nav links, forms, and other content for toggling -->
 				<div class="collapse navbar-collapse navbar-right navbar-main-collapse">
 					<ul class="nav navbar-nav">
-						<li class="active"><a href="#intro">Inicio</a></li>
+						<li class="active"><a href="../index.html">Inicio</a></li>
 						<li class="dropdown">
 							<a href="#" class="dropdown-toggle" data-toggle="dropdown"> Servicios<b
 									class="caret"></b></a>
 							<ul class="dropdown-menu">
-								<li><a href="../index.html">Auditoría y aseguramiento</a></li>
+								<li><a href="">Auditoría y aseguramiento</a></li>
 								<li><a href="">Continuidad de negocio</a></li>
 								<li><a href="">Privacidad y Protección de Datos</a></li>
 								<li><a href="">Gestión de riesgos</a></li>
 							</ul>
 						</li>
-						<li><a href="#doctor">Capacitación</a></li>
-						<li><a href="#facilities">Sobre Nosotros</a></li>
+						<li><a href="">Capacitación</a></li>
+						<li><a href="">Sobre Nosotros</a></li>
 						<li><a href="../formularios/boletin.html">Boletín</a></li>
 
 					</ul>
@@ -94,12 +88,13 @@
 											<h3 class="panel-title"></span> Iniciar sesión <small></small></h3>
 										</div>
 										<div class="panel-body">
-											<form role="form" class="lead" action="login_registrar.php" method="POST">
+											<form role="form" class="lead" action="../conexiones/login_registrar.php"
+												method="POST">
 												<div class="row">
 													<div class="btn-lg">
 														<div class="form-group">
 															<label>Usuario</label>
-															<input type="text" name="username" id="first_name"
+															<input type="text" name="username" id="username"
 																class="form-control input-md">
 														</div>
 													</div>
@@ -116,13 +111,14 @@
 
 												</div>
 
-												<input type="submit" value="Submit" name="btningresar"
-													class="btn btn-skin btn-block btn-lg">
-												<input type="submit" value="Crear cuenta" name="crearcuenta"
-													href="./registrar.html" class="btn btn-skin btn-block btn-lg">
+												<input type="submit" value="Ingresar" name="btn_ingresar"
+													class="btn btn-skin btn-block btn-lg" id="btn_ingresar">
 
 											</form>
-											
+											<form action="../login/registrar.html" class="lead">
+												<input type="submit" value="Crear cuenta" name="btn_crearCuenta"
+													id="btn_crearCuenta" class="btn btn-skin btn-block btn-lg">
+											</form>
 										</div>
 									</div>
 

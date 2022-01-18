@@ -51,19 +51,19 @@
 				<!-- Collect the nav links, forms, and other content for toggling -->
 				<div class="collapse navbar-collapse navbar-right navbar-main-collapse">
 					<ul class="nav navbar-nav">
-						<li class="active"><a href="#intro">Inicio</a></li>
+						<li class="active"><a href="../index.html">Inicio</a></li>
 						<li class="dropdown">
 							<a href="#" class="dropdown-toggle" data-toggle="dropdown"> Servicios<b
 									class="caret"></b></a>
 							<ul class="dropdown-menu">
-								<li><a href="../index.html">Auditoría y aseguramiento</a></li>
+								<li><a href="">Auditoría y aseguramiento</a></li>
 								<li><a href="">Continuidad de negocio</a></li>
 								<li><a href="">Privacidad y Protección de Datos</a></li>
 								<li><a href="">Gestión de riesgos</a></li>
 							</ul>
 						</li>
-						<li><a href="#doctor">Capacitación</a></li>
-						<li><a href="#facilities">Sobre Nosotros</a></li>
+						<li><a href="">Capacitación</a></li>
+						<li><a href="">Sobre Nosotros</a></li>
 						<li><a href="../formularios/boletin.html">Boletín</a></li>
 
 					</ul>
@@ -89,12 +89,13 @@
 												Formulario de Registro </h3>
 										</div>
 										<div class="panel-body">
-											<form role="form" class="lead" action="login_registrar.php" method="POST">
+											<form role="form" class="lead" action="../conexiones/login_registrar.php"
+												method="POST">
 												<div class="row">
 													<div class="col-xs-6 col-sm-6 col-md-6">
 														<div class="form-group">
 															<label>Nombre</label>
-															<input type="text" name="name" id="name"
+															<input type="text" name="nombre" id="nombre"
 																class="form-control input-md">
 														</div>
 													</div>
@@ -124,13 +125,15 @@
 													</div>
 												</div>
 
-												<input type="submit" value="Crear cuenta" name="btnregistrar"
-													class="btn btn-skin btn-block btn-lg">
-												<input type="submit" value="Regresar" name="btnregistrar"
-													href="../index.html"
-													class="btn btn-skin btn-block btn-lg">
-
+												<input type="submit" value="Crear cuenta" name="btn_registrar"
+													id="btn_registrar" class="btn btn-skin btn-block btn-lg">
+											
 											</form>
+											<form action="../index.html" class="lead">
+												<input type="submit" value="Regresar" name="btn_regresar"
+												id="btn_regresar" class="btn btn-skin btn-block btn-lg">
+											</form>
+											
 										</div>
 									</div>
 

@@ -8,10 +8,10 @@ include("datos.php");
 
 if (isset($_POST["fname"], $_POST["lname"], $_POST["email"], $_POST["phone"]!="" ){
 //traspasamos a variables locales, para evitar complicaciones con las comillas:
-$fname = $_POST["fname"];
-$lname = $_POST["lname"];
-$email = $_POST["email"];
-$phone = $_POST["phone"];
+$nombre   = $_POST["nombre"];
+$username = $_POST["username"];
+$email   = $_POST["email"];
+$password   = $_POST["password"];
 
 //Preparamos la orden SQL
 $consulta = mysqli_query($conexion,"INSERT INTO contactos

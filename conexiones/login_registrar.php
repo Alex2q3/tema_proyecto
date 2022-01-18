@@ -2,20 +2,20 @@
 
 include("datos.php");
 
-$name   = $_POST["name"];
+$nombre   = $_POST["nombre"];
 $username = $_POST["username"];
 $email   = $_POST["email"];
 $password   = $_POST["password"];
 
 //Login
-if(isset($_POST["btningresar"]))
+if(isset($_POST["btn_ingresar"]))
 {
         $query = mysqli_query($conexion,"SELECT * FROM usuarios WHERE username = '$username' AND password='$password'");
         $nr = mysqli_num_rows($query);
 
         if($nr==1)
         {
-                echo "<script> alert('Bienvenido $username'); window.location='contenido.php' </script>";
+                echo "<script> alert('Bienvenido $username'); window.location='clientes.html' </script>";
         }else
         {
                 echo "<script> alert('Usuario y clave no coinciden'); window.location='login.html' </script>";
@@ -23,9 +23,9 @@ if(isset($_POST["btningresar"]))
 }
 
 //Registrar
-if(isset($_POST["btnregistrar"]))
+if(isset($_POST["btn_registrar"]))
 {
-        $sqlgrabar = "INSERT INTO usuarios (username,password,email,name) values ('$username','$password','$email','$name')";
+        $sqlgrabar = "INSERT INTO usuarios (username,password,email,nombre) values ('$username','$password','$email','$nombre')";
 
         if(mysqli_query($conexion,$sqlgrabar))
         {

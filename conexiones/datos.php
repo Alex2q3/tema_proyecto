@@ -1,4 +1,5 @@
 <?php
+//la conexión depende de cada ambiente configurado en el servidor
 $host="localhost";
 $usuario="adproject";
 $clave="Telecom321%";
