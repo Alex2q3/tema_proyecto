@@ -31,7 +31,7 @@ if(isset($_POST["btn_registrar"]))
 echo $sqlgrabar;
         if(mysqli_query($conexion,$sqlgrabar))
         {
-                echo "<script> alert('Usuario registrado con exito: $name'); window.location='../index.html' </script>";
+                echo "<script> alert('Usuario registrado con exito: $username'); window.location='../index.html' </script>";
         }else
         {
                 echo "Error: ".$sqlgrabar."<br>".mysql_error($conexion);
