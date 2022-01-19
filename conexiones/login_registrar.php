@@ -17,7 +17,7 @@ if(isset($_POST["btn_ingresar"]))
 
         if($nr==1)
         {
-                echo "<script> alert('Bienvenido $username'); window.location='clientes.html' </script>";
+                echo "<script> alert('Bienvenido $username'); window.location='../formularios/clientes.html' </script>";
         }else
         {
                 echo "<script> alert('Usuario y clave no coinciden'); window.location='login.html' </script>";
@@ -27,11 +27,11 @@ if(isset($_POST["btn_ingresar"]))
 //Registrar
 if(isset($_POST["btn_registrar"]))
 {
-        $sqlgrabar = "INSERT INTO usuarios (username,password,email,nombre) values ('.$username.','.$password.','.$email.','.$nombre.')";
+        $sqlgrabar = "INSERT INTO usuarios (username,password,email,nombre) values ('$username','$password','$email','$nombre')";
 echo $sqlgrabar;
         if(mysqli_query($conexion,$sqlgrabar))
         {
-                echo "<script> alert('Usuario registrado con exito: $name'); window.location='index.html' </script>";
+                echo "<script> alert('Usuario registrado con exito: $name'); window.location='../index.html' </script>";
         }else
         {
                 echo "Error: ".$sqlgrabar."<br>".mysql_error($conexion);
