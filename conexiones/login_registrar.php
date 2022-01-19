@@ -7,6 +7,8 @@ $username = $_POST["username"];
 $email   = $_POST["email"];
 $password   = $_POST["password"];
 
+echo $nombre;
+
 //Login
 if(isset($_POST["btn_ingresar"]))
 {
@@ -25,8 +27,8 @@ if(isset($_POST["btn_ingresar"]))
 //Registrar
 if(isset($_POST["btn_registrar"]))
 {
-        $sqlgrabar = "INSERT INTO usuarios (username,password,email,nombre) values ('$username','$password','$email','$nombre')";
-
+        $sqlgrabar = "INSERT INTO usuarios (username,password,email,nombre) values ('.$username.','.$password.','.$email.','.$nombre.')";
+echo $sqlgrabar;
         if(mysqli_query($conexion,$sqlgrabar))
         {
                 echo "<script> alert('Usuario registrado con exito: $name'); window.location='index.html' </script>";
