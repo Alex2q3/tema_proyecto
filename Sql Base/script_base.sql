@@ -1,7 +1,7 @@
 create database pry_honeypot character set utf8;
 --Creación usuario de Base de datos
 create user adproject@'localhost';
-set PASSWORD for ‘adproject’@’localhost’ = ‘Telecom321%’;
+set PASSWORD for 'adproject'@'localhost' = 'Telecom321%';
 --Dar privilegios al usuario
 grant all on pry_honeypot.* to adproject@'localhost';
 --Actualizar los cambios
@@ -20,7 +20,7 @@ CREATE TABLE `pry_honeypot`.`usuarios` (
   UNIQUE INDEX `username_UNIQUE` (`username` ASC) VISIBLE)
 COMMENT = 'Tabla que almacena a los Usuarios';
 
-INSERT INTO `pry_honeypot`.`usuarios` (`username`,`password`,`email`,`telefono`) VALUES ('Juan Carlos','123','andres.pazmino@gmail.com','0995472160');
+INSERT INTO 'usuarios' ('idusuarios','username','password','email','nombre') VALUES (1,'Juan','123','andres.pazmino@gmail.com','Juan Carlos Arroyo');
 
 --Creación Tabla Boletin
 CREATE TABLE `pry_honeypot`.`boletin` (
