@@ -2,20 +2,23 @@
 
 include("datos.php");
 
-$nombre   = $_POST["nombre"];
-$username = $_POST["username"];
-$email   = $_POST["email"];
-$password   = $_POST["password"];
+$nombre   = filter_var($_POST["nombre"], FILTER_SANITIZE_STRING);
+$username = filter_var($_POST["username"], FILTER_SANITIZE_STRING);
+$email   = filter_var($_POST["email"], FILTER_SANITIZE_STRING);
+$password   = filter_var($_POST["password"], FILTER_SANITIZE_STRING);
 
-echo $nombre;
+    
 
 //Login
 if(isset($_POST["btn_ingresar"]))
 {
+        //$username = $db->mysqli_real_escape_string($username);
+    //$password = $db->mysqli_real_escape_string(md5('YOUR_SECRET_STRING', $password));
+
         $query = mysqli_query($conexion,"SELECT * FROM usuarios WHERE username = '$username' AND password='$password'");
         $nr = mysqli_num_rows($query);
 
-        if($nr==1)
+        if($nr==1)F
         {
                 echo "<script> alert('Bienvenido $username'); window.location='../formularios/clientes.html' </script>";
         }else
