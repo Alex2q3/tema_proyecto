@@ -17,6 +17,17 @@ $direccion   =  filter_var($_POST["direccion"],FILTER_SANITIZE_STRING);
 $comentario   =  filter_var($_POST["comentario"],FILTER_SANITIZE_STRING);
 
 echo "parametros correctos";
+echo $nombre_org_pry;
+echo $nombre;
+echo $apellido;
+echo $telefono;
+echo $email;
+echo $pentesting;
+echo $ciudad;
+echo $direccion;
+echo $comentario;
+
+
 
 
 if(isset($_POST["btn_enviar"]))
@@ -24,6 +35,8 @@ if(isset($_POST["btn_enviar"]))
         $sqlgrabar = "INSERT INTO boletin (nombre_org_pry,nombre,apellido,telefono,email,pentesting,sistema_backups,itil,owasp,
         desarrollo_seguro,ciudad,direccion,comentario) values ('$nombre_org_pry','$nombre','$apellido','$telefono',
         '$email','$pentesting','$sistema_backups','$itil','$owasp','$desarrollo_seguro','$ciudad','$direccion','$comentario')";
+
+echo $sqlgrabar;
 
         if(mysqli_query($conexion,$sqlgrabar))
         {
