@@ -15,6 +15,10 @@ $desarrollo_seguro   = $_POST["desarrollo_seguro"];
 $ciudad   =  filter_var($_POST["ciudad"],FILTER_SANITIZE_STRING);
 $direccion   =  filter_var($_POST["direccion"],FILTER_SANITIZE_STRING);
 $comentario   =  filter_var($_POST["comentario"],FILTER_SANITIZE_STRING);
+
+echo "parametros correctos";
+
+
 if(isset($_POST["btn_enviar"]))
 {
         $sqlgrabar = "INSERT INTO boletin (nombre_org_pry,nombre,apellido,telefono,email,pentesting,sistema_backups,itil,owasp,
