@@ -32,6 +32,14 @@ echo $comentario;
 
 if(isset($_POST["btn_enviar"]))
 {
+
+      if($pentesting == null){ $pentesting = 0; }else{ $pentesting = 1;}
+      if($sistema_backups == null){ $sistema_backups = 0; }else{ $sistema_backups = 1;}
+      if($itil == null){ $itil = 0; }else{ $itil = 1;}
+      if($owasp == null){ $owasp = 0; }else{ $owasp = 1;}
+      if($desarrollo_seguro == null){ $desarrollo_seguro = 0; }else{ $desarrollo_seguro = 1;}
+ 
+
         $sqlgrabar = "INSERT INTO boletin (nombre_org_pry,nombre,apellido,telefono,email,pentesting,sistema_backups,itil,owasp,
         desarrollo_seguro,ciudad,direccion,comentario) values ('$nombre_org_pry','$nombre','$apellido','$telefono',
         '$email','$pentesting','$sistema_backups','$itil','$owasp','$desarrollo_seguro','$ciudad','$direccion','$comentario')";
