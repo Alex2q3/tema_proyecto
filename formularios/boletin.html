@@ -97,8 +97,9 @@
 															<label>¿Cuál es el nombre de tu organización o
 																proyecto?</label>
 															<input type="text" name="nombre_org_pry" id="nombre_org_pry"
-																class="form-control input-md" pattern="[A-Z]"
-																onkeyup="javascript:this.value=this.value.toUpperCase();">
+																class="form-control input-md" required pattern="[a-zA-Z ]*" 
+																onkeyup="javascript:this.value=this.value.toUpperCase();"
+																title="Por favor ingrese un nombre valido sin caracteres especiales."> 
 														</div>
 													</div>
 												</div>
@@ -107,17 +108,20 @@
 													<div class="col-xs-6 col-sm-6 col-md-6">
 														<div class="form-group">
 															<label>Nombre</label>
-															<input type="text" name="nombre" id="nombre"
-																class="form-control input-md" pattern="[A-Z]"
-																onkeyup="javascript:this.value=this.value.toUpperCase();">
+															<input type="text" name="nombre" id="nombre" required
+																class="form-control input-md" pattern="[a-zA-Z ]*" 
+																onkeyup="javascript:this.value=this.value.toUpperCase();"
+																title="Por favor ingrese su Nombre valido sin caracteres especiales.">
 														</div>
 													</div>
 													<div class="col-xs-6 col-sm-6 col-md-6">
 														<div class="form-group">
 															<label>Apellido</label>
 															<input type="text" name="apellido" id="apellido"
-																class="form-control input-md" pattern="[A-Z]"
-																onkeyup="javascript:this.value=this.value.toUpperCase();">
+																class="form-control input-md" pattern="[a-zA-Z ]*" 
+																required
+																onkeyup="javascript:this.value=this.value.toUpperCase();"
+																title="Por favor ingrese su Apellido valido sin caracteres especiales.">
 														</div>
 													</div>
 												</div>
@@ -126,15 +130,19 @@
 														<div class="form-group">
 															<label>Teléfono</label>
 															<input type="tel" name="telefono" id="telefono"
-															placeholder="022222222"
-																pattern="[0-9]{9}" class="form-control input-md">
+															placeholder="022222222" maxlength="9"
+															required
+																pattern="[0-9]{9}" class="form-control input-md"
+																title="Por favor ingrese solo números">
 														</div>
 													</div>
 													<div class="col-xs-6 col-sm-6 col-md-6">
 														<div class="form-group">
 															<label>Email</label>
 															<input type="email" name="email" id="email"
-																class="form-control input-md">
+															required
+																class="form-control input-md"
+																title="Por favor ingrese un email valido. @">
 														</div>
 													</div>
 
@@ -172,16 +180,20 @@
 														<div class="form-group">
 															<label>Ciudad</label>
 															<input type="text" name="ciudad" id="ciudad"
-																class="form-control input-md" pattern="[A-Z]"
-																onkeyup="javascript:this.value=this.value.toUpperCase();">
+																class="form-control input-md" pattern="[a-zA-Z ]*" 
+																required
+																onkeyup="javascript:this.value=this.value.toUpperCase();"
+																title="Por favor ingrese una Ciudad  sin caracteres especiales.">
 														</div>
 													</div>
 													<div class="col-xs-6 col-sm-6 col-md-6">
 														<div class="form-group">
 															<label>Dirección</label>
 															<input type="text" name="direccion" id="direccion"
-																class="form-control input-md" pattern="[A-Z]"
-																onkeyup="javascript:this.value=this.value.toUpperCase();">
+																class="form-control input-md" pattern="[a-zA-Z ]*" 
+																required
+																onkeyup="javascript:this.value=this.value.toUpperCase();"
+																title="Por favor ingrese una Dirección sin caracteres especiales.">
 														</div>
 													</div>
 												</div>
@@ -190,8 +202,9 @@
 														<div class="form-group ">
 															<label>Comentario</label>
 															<textarea type="text" name="comentario" id="comentario"
-																class="form-control input-md" pattern="[A-Z]"
-																onkeyup="javascript:this.value=this.value.toUpperCase();"></textarea>
+																class="form-control input-md" pattern="[a-zA-Z ]*" 
+																onkeyup="javascript:this.value=this.value.toUpperCase();">
+															</textarea>
 														</div>
 													</div>
 												</div>
@@ -304,7 +317,7 @@
 	</div>
 	<a href="#" class="scrollup"><i class="fa fa-angle-up active"></i></a>
 
-	<!-- Core JavaScript Files -->
+	<!-- Core JavaScript Files 
 	<script src="../js/jquery.min.js"></script>
 	<script src="../js/bootstrap.min.js"></script>
 	<script src="../js/jquery.easing.min.js"></script>
@@ -315,7 +328,7 @@
 	<script src="../plugins/cubeportfolio/js/jquery.cubeportfolio.min.js"></script>
 	<script src="../js/owl.carousel.min.js"></script>
 	<script src="../js/nivo-lightbox.min.js"></script>
-	<script src="../js/custom.js"></script>
+	<script src="../js/custom.js"></script>-->
 
 
 </body>
