@@ -42,7 +42,7 @@ if(isset($_POST["btn_enviar"]))
 
         $sqlgrabar = "INSERT INTO boletin (nombre_org_pry,nombre,apellido,telefono,email,pentesting,sistema_backups,itil,owasp,
         desarrollo_seguro,ciudad,direccion,comentario) values ('$nombre_org_pry','$nombre','$apellido','$telefono',
-        '$email','$pentesting','$sistema_backups','$itil','$owasp','$desarrollo_seguro','$ciudad','$direccion','$comentario')";
+        '$email',$pentesting,$sistema_backups,$itil,$owasp,$desarrollo_seguro,'$ciudad','$direccion','$comentario')";
 
 echo $sqlgrabar;
 
