@@ -7,7 +7,13 @@ $username = filter_var($_POST["username"], FILTER_SANITIZE_STRING);
 $email   = filter_var($_POST["email"], FILTER_SANITIZE_STRING);
 $password   = filter_var($_POST["password"], FILTER_SANITIZE_STRING);
 
-    
+echo "parametros correctos";
+
+echo $nombre;
+echo $username;
+echo $password;
+echo $email;
+
 
 //Login
 if(isset($_POST["btn_ingresar"]))
@@ -18,7 +24,7 @@ if(isset($_POST["btn_ingresar"]))
         $query = mysqli_query($conexion,"SELECT * FROM usuarios WHERE username = '$username' AND password='$password'");
         $nr = mysqli_num_rows($query);
 
-        if($nr==1)F
+        if($nr==1)
         {
                 echo "<script> alert('Bienvenido $username'); window.location='../formularios/clientes.html' </script>";
         }else
