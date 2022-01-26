@@ -16,7 +16,7 @@ $ciudad   =  filter_var($_POST["ciudad"],FILTER_SANITIZE_STRING);
 $direccion   =  filter_var($_POST["direccion"],FILTER_SANITIZE_STRING);
 $comentario   =  filter_var($_POST["comentario"],FILTER_SANITIZE_STRING);
 
-echo "parametros correctos";
+/*echo "parametros correctos";
 echo $nombre_org_pry;
 echo $nombre;
 echo $apellido;
@@ -25,7 +25,7 @@ echo $email;
 echo $pentesting;
 echo $ciudad;
 echo $direccion;
-echo $comentario;
+echo $comentario;*/
 
 
 
@@ -44,11 +44,11 @@ if(isset($_POST["btn_enviar"]))
         desarrollo_seguro,ciudad,direccion,comentario) values ('$nombre_org_pry','$nombre','$apellido','$telefono',
         '$email',$pentesting,$sistema_backups,$itil,$owasp,$desarrollo_seguro,'$ciudad','$direccion','$comentario')";
 
-echo $sqlgrabar;
+        //echo $sqlgrabar;
 
         if(mysqli_query($conexion,$sqlgrabar))
         {
-                echo "<script> alert('Se ha registrado a nuestro boletín Exitosamente); window.location='index.html' </script>";
+                echo "<script> alert('Se ha recgistrado correctamente a nuestro boletín'); window.location='../index.html' </script>";
         }else
         {
                 echo "Error: ".$sqlgrabar."<br>".mysql_error($conexion);

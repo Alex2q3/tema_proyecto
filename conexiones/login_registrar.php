@@ -7,12 +7,11 @@ $username = filter_var($_POST["username"], FILTER_SANITIZE_STRING);
 $email   = filter_var($_POST["email"], FILTER_SANITIZE_STRING);
 $password   = filter_var($_POST["password"], FILTER_SANITIZE_STRING);
 
-echo "parametros correctos";
-
+/*echo "parametros correctos";
 echo $nombre;
 echo $username;
 echo $password;
-echo $email;
+echo $email;*/
 
 
 //Login
@@ -38,7 +37,7 @@ if(isset($_POST["btn_registrar"]))
 {
         $sqlgrabar = "INSERT INTO usuarios (username,password,email,nombre) values ('$username','$password','$email','$nombre')";
 
-        echo $sqlgrabar;
+        //echo $sqlgrabar;
         if(mysqli_query($conexion,$sqlgrabar))
         {
                 echo "<script> alert('Usuario registrado con exito: $username'); window.location='../index.html' </script>";

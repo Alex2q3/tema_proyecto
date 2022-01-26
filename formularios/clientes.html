@@ -95,14 +95,16 @@
 														<div class="form-group">
 															<label>Nombre</label>
 															<input type="text" name="nombre" id="nombre"
-																class="form-control input-md">
+																class="form-control input-md"
+																onkeyup="javascript:this.value=this.value.toUpperCase();">
 														</div>
 													</div>
 													<div class="col-xs-6 col-sm-6 col-md-6">
 														<div class="form-group">
 															<label>Apellido</label>
 															<input type="text" name="apellido" id="apellido"
-																class="form-control input-md">
+																class="form-control input-md"
+																onkeyup="javascript:this.value=this.value.toUpperCase();">
 														</div>
 													</div>
 												</div>
@@ -118,7 +120,7 @@
 														<div class="form-group">
 															<label>Identificación</label>
 															<input type="text" name="identificacion" id="identificacion"
-																class="form-control input-md">
+																class="form-control input-md" pattern="[0-9]{10}">
 														</div>
 													</div>
 
@@ -127,15 +129,15 @@
 													<div class="col-xs-6 col-sm-6 col-md-6">
 														<div class="form-group">
 															<label>Email Personal</label>
-															<input type="tel" type="email" name="email" id="email"
+															<input type="email" name="email" id="email"
 																class="form-control input-md">
 														</div>
 													</div>
 													<div class="col-xs-6 col-sm-6 col-md-6">
 														<div class="form-group">
 															<label>Email Institucional</label>
-															<input type="email" name="email_institucional" id="email_institucional"
-																class="form-control input-md">
+															<input type="email" name="email_institucional"
+																id="email_institucional" class="form-control input-md">
 														</div>
 													</div>
 												</div>
@@ -144,14 +146,16 @@
 														<div class="form-group">
 															<label>Institucion</label>
 															<input type="text" name="institucion" id="institucion"
-																class="form-control input-md">
+																class="form-control input-md"
+																onkeyup="javascript:this.value=this.value.toUpperCase();">
 														</div>
 													</div>
 													<div class="col-xs-6 col-sm-6 col-md-6">
 														<div class="form-group">
 															<label>Profesión</label>
 															<input type="text" name="profesion" id="profesion"
-																class="form-control input-md">
+																class="form-control input-md"
+																onkeyup="javascript:this.value=this.value.toUpperCase();">
 														</div>
 													</div>
 												</div>
@@ -160,14 +164,21 @@
 														<div class="form-group">
 															<label>Ciudad</label>
 															<input type="text" name="ciudad" id="ciudad"
-																class="form-control input-md">
+																class="form-control input-md"
+																onkeyup="javascript:this.value=this.value.toUpperCase();">
 														</div>
 													</div>
 													<div class="col-xs-6 col-sm-6 col-md-6">
 														<div class="form-group">
-															<label>Sexo</label>
-															<input type="radio" name="sexo" id="sexo"
-																class="form-control input-md">
+															<label class="control-label">Sexo</label><br>
+															<label class="radio-inline">
+																<input type="radio" name="sexo" id="sexo" value="M">
+																Hombre
+															</label>
+															<label class="radio-inline">
+																<input type="radio" name="sexo" id="sexo" value="F">
+																Mujer
+															</label>
 														</div>
 													</div>
 												</div>
