@@ -26,6 +26,8 @@ if(isset($_POST["btn_ingresar"]))
         if($nr==1)
         {
                 echo "<script> alert('Bienvenido $username'); window.location='../formularios/clientes.html' </script>";
+                $ip_add = $_SERVER['REMOTE_ADDR'];
+                echo "The user's IP address is - ".$ip_add;
         }else
         {
                 echo "<script> alert('Usuario y clave no coinciden'); window.location='login.html' </script>";
