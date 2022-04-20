@@ -23,14 +23,12 @@ if(isset($_POST["btn_ingresar"]))
         $query = mysqli_query($conexion,"SELECT * FROM usuarios WHERE username = '$username' AND password='$password'");
         $nr = mysqli_num_rows($query);
 
-        if($nr==1)
-        {
-                echo "<script> alert('Bienvenido $username'); window.location='../formularios/clientes.html' </script>";
+        if($nr==1) {
                 $ip_add = $_SERVER['REMOTE_ADDR'];
-                echo "The user's IP address is - ".$ip_add;
-        }else
-        {
-                echo "<script> alert('Usuario y clave no coinciden'); window.location='login.html' </script>";
+                echo "<script> alert('Bienvenido $username, TU ip es ' $ip_add); window.location='../formularios/clientes.html' </script>";
+                
+        }else{
+                echo "<script> alert('Usuario y clave no coinciden'); window.location='../login.html' </script>";
         }
 }
 
