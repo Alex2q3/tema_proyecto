@@ -15,37 +15,37 @@ echo $email;*/
 
 
 //Login
-if(isset($_POST["btn_ingresar"]))
-{
+if (isset($_POST["btn_ingresar"])) {
         //$username = $db->mysqli_real_escape_string($username);
-    //$password = $db->mysqli_real_escape_string(md5('YOUR_SECRET_STRING', $password));
+        //$password = $db->mysqli_real_escape_string(md5('YOUR_SECRET_STRING', $password));
 
-        $query = mysqli_query($conexion,"SELECT * FROM usuarios WHERE username = '$username' AND password='$password'");
+        $query = mysqli_query($conexion, "SELECT * FROM usuarios WHERE username = '$username' AND password='$password'");
         $nr = mysqli_num_rows($query);
-        $ip_add = $_SERVER['REMOTE_ADDR'];
-        
+        if (!empty($_SERVER['HTTP_CLIENT_IP'])) {
+                 $ip = $_SERVER['HTTP_CLIENT_IP'];
+        } elseif (!empty($_SERVER['HTTP_X_FORWARDED_FOR'])) {
+                 $ip = $_SERVER['HTTP_X_FORWARDED_FOR'];
+        } else {
+                 $ip = $_SERVER['REMOTE_ADDR'];
+        }
 
-        if($nr==1) {
-                
-                echo "<script> alert('Bienvenido $username, TU ip es '.$ip_add); window.location='../formularios/clientes.html' </script>";
-                
-        }else{
+
+        if ($nr == 1) {
+
+                echo "<script> alert('Bienvenido $username, TU ip es $ip'); window.location='../formularios/clientes.html' </script>";
+        } else {
                 echo "<script> alert('Usuario y clave no coinciden'); window.location='../login/login.html' </script>";
         }
 }
 
 //Registrar
-if(isset($_POST["btn_registrar"]))
-{
+if (isset($_POST["btn_registrar"])) {
         $sqlgrabar = "INSERT INTO usuarios (username,password,email,nombre) values ('$username','$password','$email','$nombre')";
 
         //echo $sqlgrabar;
-        if(mysqli_query($conexion,$sqlgrabar))
-        {
+        if (mysqli_query($conexion, $sqlgrabar)) {
                 echo "<script> alert('Usuario registrado con exito: $username'); window.location='../index.html' </script>";
-        }else
-        {
-                echo "Error: ".$sqlgrabar."<br>".mysql_error($conexion);
+        } else {
+                echo "Error: " . $sqlgrabar . "<br>" . mysql_error($conexion);
         }
 }
-?>
