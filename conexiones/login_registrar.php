@@ -32,7 +32,7 @@ if (isset($_POST["btn_ingresar"])) {
 
         if ($nr == 1) {
 
-                echo "<script> alert('Bienvenido $username, TU ip es $ip'); window.location='../formularios/clientes.html' </script>";
+                echo "<script> alert('Bienvenido $username, TU ip es $ip'); window.location= urlencode('../formularios/clientes.html') </script>";
         } else {
                 echo "<script> alert('Usuario y clave no coinciden'); window.location='../login/login.html' </script>";
         }
