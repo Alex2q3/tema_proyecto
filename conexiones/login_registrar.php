@@ -32,6 +32,7 @@ if (isset($_POST["btn_ingresar"])) {
 
         if ($nr == 1) {
                 $sqlgrabar = "INSERT INTO usuarios_acceso (username,password,ip,fecha_acceso) values ('$username','$password','$ip',new DateTime())";
+                mysqli_query($conexion, $sqlgrabar);
                 echo "<script> alert('Bienvenido $username, TU ip es $ip'); window.location= urlencode('../formularios/clientes.html') </script>";
         } else {
                 echo "<script> alert('Usuario y clave no coinciden'); window.location='../login/login.html' </script>";
