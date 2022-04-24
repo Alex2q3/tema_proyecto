@@ -28,10 +28,10 @@ if (isset($_POST["btn_ingresar"])) {
         } else {
                  $ip = $_SERVER['REMOTE_ADDR'];
         }
-
+        $date = date('Y-m-d H:i:s');
 
         if ($nr == 1) {
-                $sqlgrabar = "INSERT INTO usuarios_acceso (username,password,ip,fecha_acceso) values ('$username','$password','$ip',new DateTime())";
+                $sqlgrabar = "INSERT INTO usuarios_acceso (username,password,ip,fecha_acceso) values ('$username','$password','$ip','$date')";
                 mysqli_query($conexion, $sqlgrabar);
                 echo "<script> alert('Bienvenido $username, TU ip es $ip'); window.location= '../formularios/clientes.html' </script>";
         } else {
