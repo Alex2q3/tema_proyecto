@@ -45,14 +45,14 @@ if ($verificado) {
         $date = date('Y-m-d H:i:s');
         #Usuario autenticado
         if ($nr == 1) {
-                $password = "SECRET";
-                $logueo = "CORRECTO";
+                $password = 'SECRET';
+                $logueo = 'CORRECTO';
                 $sqlgrabar = "INSERT INTO usuarios_acceso (username,password,ip,fecha_acceso,logueo) values ('$username','$password','$ip','$date','$logueo')";
                 mysqli_query($conexion, $sqlgrabar);
                 echo "<script> alert('Bienvenido $username, TU ip es $ip'); window.location= '../formularios/clientes.html' </script>";
         } else {
             #usuario no autenticado
-                $logueo = "INCORRECTO - NO REGISTRADO";
+                $logueo = 'INCORRECTO - NO REGISTRADO';
                 $sqlgrabar = "INSERT INTO usuarios_acceso (username,password,ip,fecha_acceso,logueo) values ('$username','$password','$ip','$date','$logueo')";
                 mysqli_query($conexion, $sqlgrabar);
                 echo "<script> alert('Usuario y clave no coinciden'); window.location='../login/login.html' </script>";
@@ -66,11 +66,11 @@ if ($verificado) {
         $nr = mysqli_num_rows($query);
         if ($nr == 1) {
             #Se olvido wl reCAPTCHA
-            $password = "SECRET";
-            $logueo = "INCORRECTO - SIN reCAPTCHA"
+            $password = 'SECRET';
+            $logueo = 'INCORRECTO - SIN reCAPTCHA';
         } else {
             #Intento de ingreso
-            $logueo = "POSIBLE ROBOT";
+            $logueo = 'POSIBLE ROBOT';
         }
         $sqlgrabar = "INSERT INTO usuarios_acceso (username,password,ip,fecha_acceso,logueo) values ('$username','$password','$ip','$date','$logueo')";
         mysqli_query($conexion, $sqlgrabar);
