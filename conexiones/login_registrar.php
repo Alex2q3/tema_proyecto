@@ -9,7 +9,7 @@ $email   = filter_var($_POST["email"], FILTER_SANITIZE_STRING);
 $password   = filter_var($_POST["password"], FILTER_SANITIZE_STRING);
 # Aquí pon la clave secreta que obtuviste en la página de developers de Google
 #define("CLAVE_SECRETA", "TU_CLAVE_VA_AQUÍ");
-define("6LcH9J0fAAAAABrDc8qHJDKj3wVg2EpF5OUvEQlS", "6LcH9J0fAAAAAOHRj6-luxLkTFK3c1eAUzBMskwV");
+define("CLAVE_SECRETA", "6LcH9J0fAAAAABrDc8qHJDKj3wVg2EpF5OUvEQlS");
 
 /*echo "parametros correctos";
 echo $nombre;
