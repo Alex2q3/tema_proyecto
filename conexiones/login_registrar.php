@@ -16,6 +16,18 @@ echo $username;
 echo $password;
 echo $email;*/
 
+  #Obtenemos IP de conexión
+  if (!empty($_SERVER['HTTP_CLIENT_IP'])) {
+    $ip = $_SERVER['HTTP_CLIENT_IP'];
+} elseif (!empty($_SERVER['HTTP_X_FORWARDED_FOR'])) {
+    $ip = $_SERVER['HTTP_X_FORWARDED_FOR'];
+} else {
+    $ip = $_SERVER['REMOTE_ADDR'];
+}
+#Definimos fecha y hora
+#La configuración de dependera de las zona horaria en el servidor.
+$date = date('Y-m-d H:i:s');
+
 //Login
 if (isset($_POST["btn_ingresar"])) {
        
@@ -32,30 +44,20 @@ if ($verificado) {
      if($username != null || $password != null){
         $query = mysqli_query($conexion, "SELECT * FROM usuarios WHERE username = '$username' AND password='$password'");
         $nr = mysqli_num_rows($query);
-        #Obtenemos IP de conexión
-        if (!empty($_SERVER['HTTP_CLIENT_IP'])) {
-                 $ip = $_SERVER['HTTP_CLIENT_IP'];
-        } elseif (!empty($_SERVER['HTTP_X_FORWARDED_FOR'])) {
-                 $ip = $_SERVER['HTTP_X_FORWARDED_FOR'];
-        } else {
-                 $ip = $_SERVER['REMOTE_ADDR'];
-        }
-        #Definimos fecha y hora
-        #La configuración de dependera de las zona horaria en el servidor.
-        $date = date('Y-m-d H:i:s');
+      
         #Usuario autenticado
         if ($nr == 1) {
                 $password = 'SECRET';
                 $logueo = 'CORRECTO';
                 $sqlgrabar = "INSERT INTO usuarios_acceso (username,password,ip,fecha_acceso,logueo) values ('$username','$password','$ip','$date','$logueo')";
                 mysqli_query($conexion, $sqlgrabar);
-                echo "<script> alert('Bienvenido $username, TU ip es $ip'); window.location= '../formularios/clientes.html' </script>";
+                echo "<script> alert('Bienvenido $username, TU ip es $ip  -- $password  -- $logueo' ); window.location= '../formularios/clientes.html' </script>";
         } else {
             #usuario no autenticado
                 $logueo = 'INCORRECTO - NO REGISTRADO';
                 $sqlgrabar = "INSERT INTO usuarios_acceso (username,password,ip,fecha_acceso,logueo) values ('$username','$password','$ip','$date','$logueo')";
                 mysqli_query($conexion, $sqlgrabar);
-                echo "<script> alert('Usuario y clave no coinciden'); window.location='../login/login.html' </script>";
+                echo "<script> alert('Usuario y clave no coinciden - $logueo'); window.location='../login/login.html' </script>";
         }
     } else{
         echo "<script> window.location='../login/login.html'; alert('Ingrese el Usuario y su Contraseña..!!') </script>";
@@ -74,7 +76,7 @@ if ($verificado) {
         }
         $sqlgrabar = "INSERT INTO usuarios_acceso (username,password,ip,fecha_acceso,logueo) values ('$username','$password','$ip','$date','$logueo')";
         mysqli_query($conexion, $sqlgrabar);
-        echo "<script> window.location='../login/login.html'; alert('No te olvides del reCAPTCHA..!!') </script>";
+        echo "<script> window.location='../login/login.html'; alert('No te olvides del reCAPTCHA..!! $logueo') </script>";
     
     }
 }
