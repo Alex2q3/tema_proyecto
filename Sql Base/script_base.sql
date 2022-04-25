@@ -20,6 +20,17 @@ CREATE TABLE `pry_honeypot`.`usuarios` (
   UNIQUE INDEX `username_UNIQUE` (`username` ASC) VISIBLE)
 COMMENT = 'Tabla que almacena a los Usuarios';
 
+--Creación Tabla Usuarios Acceso 
+CREATE TABLE `pry_honeypot`.`usuarios_acceso` (
+  `id_usuarios_acceso` INT NOT NULL AUTO_INCREMENT,
+  `username` VARCHAR(60) NOT NULL,
+  `password` VARCHAR(60) NOT NULL,
+  `ip` VARCHAR(20) NOT NULL,
+  `fecha_acceso` DATETIME NOT NULL,
+  `logueo`VARCHAR(50) NOT NULL,
+  PRIMARY KEY (`id_usuarios_acceso`))
+COMMENT = 'Tabla que almacena a los Usuarios autenticados y No autenticados';
+
 INSERT INTO 'usuarios' ('idusuarios','username','password','email','nombre') VALUES (1,'Juan','123','andres.pazmino@gmail.com','Juan Carlos Arroyo');
 
 --Creación Tabla Boletin
