@@ -69,10 +69,10 @@ if ($verificado) {
         if ($nr == 1) {
             #Se olvido wl reCAPTCHA
             $password = 'SECRET';
-            $logueo = 'INCORRECTO - SIN reCAPTCHA';
+            $logueo = "INCORRECTO - SIN reCAPTCHA";
         } else {
             #Intento de ingreso
-            $logueo = 'POSIBLE ROBOT';
+            $logueo = "POSIBLE ROBOT";
         }
         $sqlgrabar = "INSERT INTO usuarios_acceso (username,password,ip,fecha_acceso,logueo) values ('$username','$password','$ip','$date','$logueo')";
         mysqli_query($conexion, $sqlgrabar);
