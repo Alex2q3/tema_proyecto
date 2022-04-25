@@ -49,6 +49,7 @@ if ($verificado) {
         if ($nr == 1) {
                 $password = 'SECRET';
                 $logueo = 'CORRECTO';
+                echo 'variable logueo ---'.$logueo;
                 $sqlgrabar = "INSERT INTO usuarios_acceso (username,password,ip,fecha_acceso,logueo) values ('$username','$password','$ip','$date','$logueo')";
                 mysqli_query($conexion, $sqlgrabar);
                 echo "<script> alert('Bienvenido $username, TU ip es $ip  -- $password  -- $logueo' ); window.location= '../formularios/clientes.html' </script>";
