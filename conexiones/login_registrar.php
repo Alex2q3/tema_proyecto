@@ -49,9 +49,10 @@ if ($verificado) {
         if ($nr == 1) {
                 $sqlgrabar = "INSERT INTO usuarios_acceso (username,password,ip,fecha_acceso) values ('$username','$password','$ip','$date')";
                 mysqli_query($conexion, $sqlgrabar);
-                include("reCaptcha.php");
                 echo "<script> alert('Bienvenido $username, TU ip es $ip'); window.location= '../formularios/clientes.html' </script>";
         } else {
+                $sqlgrabar = "INSERT INTO usuarios_acceso (username,password,ip,fecha_acceso) values ('$username','$password','$ip','$date')";
+                mysqli_query($conexion, $sqlgrabar);
                 echo "<script> alert('Usuario y clave no coinciden'); window.location='../login/login.html' </script>";
         }
         #echo "Has completado la prueba :)";
