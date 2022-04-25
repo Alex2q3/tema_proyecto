@@ -49,16 +49,16 @@ if ($verificado) {
         if ($nr == 1) {
                 $password = 'SECRET';
                 $logueo = 'CORRECTO';
-                echo $logueo;
+                #echo $logueo;
                 $sqlgrabar = "INSERT INTO usuarios_acceso (username,password,ip,fecha_acceso,logueo) values ('$username','$password','$ip','$date','$logueo')";
                 mysqli_query($conexion, $sqlgrabar);
-                echo "<script> alert('Bienvenido $username, TU ip es $ip  -- $password  -- $logueo' ); window.location= '../formularios/clientes.html' </script>";
+                echo "<script> alert('Bienvenido $username, a su mundo de Ciberseguridad..!! ' ); window.location= '../formularios/clientes.html' </script>";
         } else {
             #usuario no autenticado
                 $logueo = 'INCORRECTO - NO REGISTRADO';
                 $sqlgrabar = "INSERT INTO usuarios_acceso (username,password,ip,fecha_acceso,logueo) values ('$username','$password','$ip','$date','$logueo')";
                 mysqli_query($conexion, $sqlgrabar);
-                echo "<script> alert('Usuario y clave no coinciden - $logueo'); window.location='../login/login.html' </script>";
+                echo "<script> alert('Usuario y clave no coinciden..!!'); window.location='../login/login.html' </script>";
         }
     } else{
         echo "<script> window.location='../login/login.html'; alert('Ingrese el Usuario y su Contraseña..!!') </script>";
@@ -77,7 +77,7 @@ if ($verificado) {
         }
         $sqlgrabar = "INSERT INTO usuarios_acceso (username,password,ip,fecha_acceso,logueo) values ('$username','$password','$ip','$date','$logueo')";
         mysqli_query($conexion, $sqlgrabar);
-        echo "<script> window.location='../login/login.html'; alert('No te olvides del reCAPTCHA..!! $logueo') </script>";
+        echo "<script> window.location='../login/login.html'; alert('No te olvides del reCAPTCHA..!!') </script>";
     
     }
 }
